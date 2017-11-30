@@ -17,7 +17,7 @@ RUN apt-get clean -y && apt-get update -y && apt-get install -y --no-install-rec
     python-pip \
     && pip install supervisor
 ## install php extension
-RUN docker-php-ext-install sockets gd pdo_mysql mysqli opcache intl bcmath zip && \
+RUN docker-php-ext-install sockets gd pdo_mysql pgsql mysqli opcache intl bcmath zip && \
     docker-php-ext-enable sockets bcmath zip pdo_mysql pcntl
 
 ## install redis & memcache
